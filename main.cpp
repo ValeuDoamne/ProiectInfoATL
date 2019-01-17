@@ -2,6 +2,8 @@
 	Proiect: Registru Discoteca implementare orientata pe obiecte C++
 	Autor: Alexa Constantin-Cosmin
 
+	Aceasta versiune nu necesita numarul de n persoane la inceputul fisierului
+
 	Se compileaza folosind comanda: g++ main.cpp Registru.cpp
 */
 
