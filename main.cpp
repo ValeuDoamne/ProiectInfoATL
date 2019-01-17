@@ -73,7 +73,7 @@ void citire(vector<Registru>& v,int frecventa[]){ // Declarare functiei de citir
 void prelucrare(const vector<Registru>& v,int& ani, int& luni){
 	ani = 0;
 	luni = 0;
-	for(Registru p : v){ // Folosirea "ranged loop" fiind mai usor decat for(int i = 0;i < v.size(); i++)
+	for(Registru p : v){ // Folosirea ranged loop fiind mai usor decat for(int i = 0;i < v.size(); i++)
 		ani += p.anul(); // Adunarea anilor
 		luni += p.luna(); // Adunarea lunilor
 		if(luni > 12){  // Verificarea lunilor sa nu prezinte valori peste un an
@@ -85,13 +85,17 @@ void prelucrare(const vector<Registru>& v,int& ani, int& luni){
 }
 
 void afisare(const vector<Registru>& v,int frecventa[], int ani, int luni){
+	cout << "Introduceti fisierul de iesire: ";
+	string fisier;
+	cin >> fisier;
+	ofstream fout{fisier};
 	for(int i = 0; i < 100; i++)
-		if(frecventa[i] != 0){ // verificare de persoane existente de acesti ani
+		if(frecventa[i] != 0){ // verificare de persoane existente cu ani
 			if(frecventa[i] == 1)
-				cout << "Este o persoana cu " << i << " ani\n"; // Persoanelor cu aceeasi ani
-			else cout << "Sunt " << frecventa[i] << " persoane cu " << i << " ani\n";
+				fout << "Este o persoana de " << i << " ani\n"; // Persoanelor cu aceeasi ani
+			else fout << "Sunt " << frecventa[i] << " persoane cu " << i << " ani\n";
 		}
-	cout << "Media de varsta este " << ani/v.size() << " " << luni/v.size(); // Media ceruta a problemei
+	fout << "Media de varsta este " << ani/v.size() << " " << luni/v.size(); // Media ceruta a problemei
 }
 
 int main(){
@@ -99,7 +103,7 @@ int main(){
 	int frecventa[100]; // frecvanta anilor
 	for(int i = 0; i < 100; i++)
 		frecventa[i] = 0; // initializarea vectorului de frecventa cu 0
-	int ani,luni; // anii si lunele persoanelor
+	int ani,luni; // anii si lunile persoanelor
 	citire(v, frecventa);
 	prelucrare(v, ani, luni); // apelurile functiilor
 	afisare(v, frecventa, ani, luni);
