@@ -7,7 +7,7 @@
 */
 
 
-#include <iostream> // Declararea bibiliotecilor din STL
+#include <iostream> // Declararea bibiliotecilor STL
 #include <fstream>
 #include <vector>  
 #include <string>
