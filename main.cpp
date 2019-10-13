@@ -53,9 +53,7 @@ void afisare(const vector<Registru>& v,int frecventa[], int ani, int luni){
 
 int main(){
 	vector<Registru> v; // vectorul de persoane
-	int frecventa[100]; // frecvanta anilor
-	for(int i = 0; i < 100; i++)
-		frecventa[i] = 0; // initializarea vectorului de frecventa cu 0
+	int frecventa[100] = { 0 }; // frecvanta anilor
 	int ani,luni; // anii si lunile persoanelor
 	citire(v, frecventa);
 	prelucrare(v, ani, luni); // apelurile functiilor
